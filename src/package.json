@@ -1,0 +1,13 @@
+{
+    "short_name":"MyWebApp",
+    "name":"Mywebapplication",
+    "main": "MyWebApp.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node MyWebApp.js"
+     },
+    "dependencies":{
+        "express":"4.18.2"
+    }
+
+}
