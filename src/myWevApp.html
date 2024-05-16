@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WebApp</title>
+    <link rel="stylesheet" href="myWebApp.css"> 
+  </head>
+  <script>
+    function editProfile(){
+        document.getElementById('info').style.display = 'none'
+        document.getElementById('info-edit').style.display = 'block'
+
+        const name = document.getElementById('name').textContent
+        document.getElementById('input-name').value = name
+
+        const lastName = document.getElementById('lastName').textContent
+        document.getElementById('input-lastName').value = lastName
+
+        const course = document.getElementById('course').textContent
+        document.getElementById('input-course').value = course
+
+        const university = document.getElementById('university').textContent
+        document.getElementById('input-university').value = university
+
+    }
+
+    function saveProfile(){
+        document.getElementById('name').textContent = document.getElementById('input-name').value
+        document.getElementById('lastName').textContent = document.getElementById('input-lastName').value
+        document.getElementById('course').textContent = document.getElementById('input-course').value
+        document.getElementById('university').textContent = document.getElementById('input-university').value
+
+        document.getElementById('info').style.display = 'block'
+        document.getElementById('info-edit').style.display = 'none'
+    }
+
+  </script>
+  <body>
+    <div class='info' id='info'>
+        <h1>Profile utilisateur</h1>
+        <span>Prénom: </span><h3 id='name'>Arrthy</h3>
+        <hr />
+        <span>Nom: </span><h3 id='lastName'>Vettivelkumaran</h3>
+        <hr />
+        <span>Formation: </span><h3 id='course'>M1 informatique parcours RSA</h3>
+        <hr />
+        <span>Université: </span><h3 id='university'>Université Paris Cité</h3>
+        <hr />
+        <button class='button' id="edit" onclick="editProfile()">Modifier le profile</button>
+    </div>
+    <div class='info' id='info-edit'>
+        <h1>Profile utilisateur</h1>
+        <label for='input-name'>Prénom: </label><input type="text" id='input-name' value='Arrthy' />
+        <hr />
+        <label for='input-lastName'>Nom: </label><input type="text" id='input-lastName' value='Vettivelkumaran' />
+        <hr />
+        <label for='input-course'>Formation: </label><input type="text" id='input-course' value='M1 informatique parcours RSA' />
+        <hr />
+        <label for='input-university'>Université: </label><input type="text" id='input-university' value='Université Paris Cité' />
+        <hr />
+        <button class='button' id="update" onclick="saveProfile()">Mettre à jour le profil</button>
+    </div>
+    <script src="package.json"></script>
+</body>
+
+</html>
