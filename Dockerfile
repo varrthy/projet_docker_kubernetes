@@ -1,8 +1,8 @@
 FROM node:19-alpine
 
-COPY src /app/
-
 WORKDIR /app
+
+COPY src /app/
 
 RUN npm install
 
