@@ -1,13 +1,15 @@
 {
-    "short_name":"MyWebApp",
-    "name":"Mywebapplication",
-    "main": "MyWebApp.js",
+    "name":"my-web-application",
+    "version":"1.0.0",
+    "description": "My web application",
+    "main": "src/myWebApp.js",
     "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node MyWebApp.js"
-     },
+        "test": "echo \" Error : no test specified \" && exit 1",
+        "start": "node src/myWebApp.js"
+    },
+    "author": "Arrthy Vettivelkumaran",
+    "license":"ISC",
     "dependencies":{
-        "express":"4.18.2"
+        "express":"^4.18.2"
     }
-
 }
