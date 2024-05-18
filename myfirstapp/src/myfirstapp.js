@@ -11,8 +11,6 @@ app.get('/', function (req, res) {
 });
 
 app.get('/call-second-service', function (req, res) {
-    const secondServiceHost = process.env.MYSECONDAPP_SERVICE_HOST;
-    const secondServicePort = process.env.MYSECONDAPP_SERVICE_PORT;
 
     if (!secondServiceHost || !secondServicePort) {
         return res.status(500).send("Second service environment variables not set.");
@@ -40,3 +38,4 @@ app.get('/call-second-service', function (req, res) {
 app.listen(port, () => {
     console.log(`First service listening on port ${port}`);
 });
+
