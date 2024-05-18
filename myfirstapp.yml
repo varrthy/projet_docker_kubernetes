@@ -19,7 +19,7 @@ spec:
         - containerPort: 3000
         env:
         - name: MYSECONDAPP_SERVICE_HOST
-          value: "mysecondapp-service" # This will be resolved by Kubernetes DNS
+          value: "mysecondapp-service" 
         - name: MYSECONDAPP_SERVICE_PORT
           value: "3001"
         imagePullPolicy: Always
