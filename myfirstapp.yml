@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirstapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myfirstapp
+  template:
+    metadata:
+      labels:
+        app: myfirstapp
+    spec:
+      containers:
+      - name: myfirstapp-container
+        image: varrthy/myfirstapp:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MYSECONDAPP_SERVICE_HOST
+          value: "mysecondapp-service" # This will be resolved by Kubernetes DNS
+        - name: MYSECONDAPP_SERVICE_PORT
+          value: "3001"
+        imagePullPolicy: Always
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirstapp-service
+spec:
+  selector:
+    app: myfirstapp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

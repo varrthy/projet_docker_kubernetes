@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysecondapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysecondapp
+  template:
+    metadata:
+      labels:
+        app: mysecondapp
+    spec:
+      containers:
+        - name: mysecondapp-container
+          image: varrthy/mysecondapp:latest
+          ports:
+          - containerPort: 3001
+          imagePullPolicy: Always
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysecondapp-service
+spec:
+  selector:
+    app: mysecondapp
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001
+
