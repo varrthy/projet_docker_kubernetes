@@ -1,5 +1,5 @@
 # Projet programmation distribuée
-Lien images dockerhub: [image de docker](https://hub.docker.com/repositories/varrthy)
+Lien images dockerhub: [image docker](https://hub.docker.com/repositories/varrthy)
 
 ### 1/. Création d’un service 
 L'application web que j'ai créer s’appelle ‘mywebapp’. C'est une application toute simple qui affiche le profil d’un utilisateur.<br />
